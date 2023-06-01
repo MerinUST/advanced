@@ -1,0 +1,5 @@
+package com.example.awsrds.Repository;
+
+public interface ProductRepository {
+
+}

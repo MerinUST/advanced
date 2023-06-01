@@ -1,0 +1,9 @@
+package com.example.awsrds.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.awsrds.Resourse.Product;
+
+public interface ProductRepository extends JpaRepository<Product,Long> {
+
+}

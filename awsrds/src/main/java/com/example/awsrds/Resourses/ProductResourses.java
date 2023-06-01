@@ -1,0 +1,26 @@
+package com.example.awsrds.Resourses;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.awsrds.Resourse.Product;
+import com.example.awsrds.Service.ProductServices;
+@RestController
+@RequestMapping("/awsproduct/api.2.0")
+public class ProductResourses {
+	@Autowired
+	ProductServices service;
+	@PostMapping
+	@RequestMapping(value="/create",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Product> addProduct(@RequestBody Product product){//objcet will be retrived as json
+		
+		return new ResponseEntity<Product>(service.add(product),HttpStatus.ACCEPTED);
+
+}
+}

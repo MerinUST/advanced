@@ -1,0 +1,9 @@
+package com.example.awsrds.Resourses;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class ProductResourses {
+	@Autowired
+	ProductService service;
+	
+}
